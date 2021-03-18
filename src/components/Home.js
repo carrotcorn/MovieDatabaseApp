@@ -21,7 +21,9 @@ export default function Home(props) {
     fetchMovie();
   }, [choice]);
 
-  const handleChangeType = (choice) => {};
+  const handleChangeType = (choice) => {
+    setChoice(choice);
+  };
 
   return (
     <main>
