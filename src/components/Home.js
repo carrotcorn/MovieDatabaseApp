@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 // import SelectType from "../components/selecttype";
-// import movieMaker from "./moviemaker";
+import movieMaker from "./movieMaker";
 // import MovieGrid from "./moviegrid";
-import Search from "./Search";
+import Search from "./search";
 
 export default function Home(props) {
   const [movieData, setMovieData] = useState(null);
