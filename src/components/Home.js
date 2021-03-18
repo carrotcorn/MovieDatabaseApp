@@ -21,22 +21,20 @@ export default function Home(props) {
     fetchMovie();
   }, [choice]);
 
-  const handleChangeType = (choice) => {
-
-  }
+  const handleChangeType = (choice) => {};
 
   return (
     <main>
-      <div className='inline'>
-        &nbsp;&nbsp;&nbsp;
-
+      <div className='inline'>&nbsp;&nbsp;&nbsp;
+         <Search />
       </div>
+
     </main>
   );
 }
 
 Home.defaultProps = {
-  choise: "popular",
+  choice: "popular",
   lang: "en_us",
   search: "",
 };
