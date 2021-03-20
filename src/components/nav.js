@@ -15,7 +15,7 @@ const Nav = () => (
       />
     </a>
     <a className='navbar-brand' href='/'>
-      Movie Search App
+      Eric's Movie Database
     </a>
     <button
       className='navbar-toggler'
