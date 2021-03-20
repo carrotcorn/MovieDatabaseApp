@@ -29,8 +29,13 @@ export default function Home(props) {
     <main>
       <div className='inline'>
         &nbsp;&nbsp;&nbsp;
-        <Search />
+        <Search setMovieData={setMovieData} />
+        <div className='optionGroup'>
+          <SelectType choise={choice} handleChangType={handleChangeType} />
+        </div>
       </div>
+      <hr />
+      <div className='gridwrap'>{movieData && <MovieGrid movies={movieData} />}</div>
     </main>
   );
 }
