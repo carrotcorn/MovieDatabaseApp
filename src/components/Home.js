@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-// import SelectType from "../components/selecttype";
+import SelectType from "./selectType";
 import movieMaker from "./movieMaker";
-// import MovieGrid from "./moviegrid";
+import MovieGrid from "./moviegrid";
 import Search from "./search";
 
 export default function Home(props) {
@@ -35,7 +35,9 @@ export default function Home(props) {
         </div>
       </div>
       <hr />
-      <div className='gridwrap'>{movieData && <MovieGrid movies={movieData} />}</div>
+      <div className='gridwrap'>
+        {movieData && <MovieGrid movies={movieData} />}
+      </div>
     </main>
   );
 }
