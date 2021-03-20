@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SelectType from "./selectType";
 import movieMaker from "./movieMaker";
-import MovieGrid from "./moviegrid";
+import MovieGrid from "./movieGrid";
 import Search from "./search";
 
 export default function Home(props) {
