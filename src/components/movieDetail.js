@@ -256,7 +256,7 @@ const MovieDetail = (props) => {
               <br />
               How would you rate this movie?
             </h5>
-            {handleNoHeart()}
+            {/* {handleNoHeart()} */}
             {handleRedHeart(arrRed)}
             {handleGreyHeart(arrGrey)}
           </form>
