@@ -40,7 +40,7 @@ const makeGrid = (array) => {
             to={`/detail${item.poster}/${item.id}/${item.title}/${item.releaseDate}/${item.rating}/${item.summary}`}
             className='gallery-item'
           >
-            <div className='moreinfo'>
+            <div className='moreInfo'>
               <button>More Info</button>
             </div>
           </Link>

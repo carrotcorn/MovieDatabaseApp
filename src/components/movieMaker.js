@@ -10,7 +10,7 @@ function filterMovies(array) {
         summary: item.overview,
       });
     }
-    console.log(result);
+    //  console.log(result);
     return result;
   }, []);
 }
