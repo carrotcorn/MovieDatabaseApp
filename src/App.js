@@ -7,7 +7,7 @@ import Footer from "./components/footer";
 import MovieDetail from "./components/movieDetail";
 // import PageNotFound from "../components/pageNotFound";
 // import About from "../components/about";
-// import MyFavourites from "../components/myfavourites";
+import MyFavourites from "./components/myFavourites";
 import MyRated from "./components/myRated";
 // import Discover from "../components/discover";
 
@@ -25,6 +25,9 @@ function App() {
               path='/detail/:poster/:id/:title/:releaseDate/:rating/:summary'
               component={MovieDetail}
             />
+            <Route path='/myfavourites'>
+              <MyFavourites />
+            </Route>
             <Route path='/myrated'>
               <MyRated />
             </Route>

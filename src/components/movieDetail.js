@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import NoPic from "../images/noposter.jpg";
-import RedHeart from "../images/redheart.png";
-import GreyHeart from "../images/greyheart.png";
+import GoldStar from "../images/goldstar.png";
+import BlackStar from "../images/blackstar.png";
 import NoHeart from "../images/noheart.png";
 
 import Search from "./search";
@@ -25,8 +25,8 @@ const MovieDetail = (props) => {
   const imagePath = "https://image.tmdb.org/t/p/w342";
   let likeshow = "";
   var searchmovieinit;
-  let arrredinit = [];
-  let arrgreyinit = [];
+  let arrGoldinit = [];
+  let arrBlackinit = [];
 
   searchmovieinit = localStorage.getItem(themovie.id);
   searchmovieinit = JSON.parse(searchmovieinit);
@@ -41,11 +41,11 @@ const MovieDetail = (props) => {
     : (initlength = 0);
 
   for (let i = 0; i < initlength; i++) {
-    arrredinit.push(1);
+    arrGoldinit.push(1);
   }
 
   for (let i = 0; i < 5 - initlength; i++) {
-    arrgreyinit.push(1);
+    arrBlackinit.push(1);
   }
 
   const [likeShow, setLikeShow] = useState("");
@@ -91,6 +91,7 @@ const MovieDetail = (props) => {
   };
 
   const handlePoster = (poster) => {
+    console.log(poster);
     if (poster != null) {
       return (
         <img
@@ -106,68 +107,68 @@ const MovieDetail = (props) => {
     }
   };
 
-  const [arrRed, setarrRed] = useState(arrredinit);
-  const [arrGrey, setarrGrey] = useState(arrgreyinit);
+  const [arrGold, setarrGold] = useState(arrGoldinit);
+  const [arrBlack, setarrBlack] = useState(arrBlackinit);
   let totalIndex;
 
-  const handleClickGrey = (greyindex) => {
-    totalIndex = greyindex + arrRed.length + 1;
-    let greylength = 5 - totalIndex;
-    let redlength = totalIndex;
+  const handleClickBlack = (blackindex) => {
+    totalIndex = blackindex + arrGold.length + 1;
+    let blacklength = 5 - totalIndex;
+    let goldlength = totalIndex;
+    let arrB = [];
     let arrG = [];
-    let arrR = [];
-    for (let i = 0; i < greylength; i++) {
+    for (let i = 0; i < blacklength; i++) {
+      arrB.push(1);
+    }
+    for (let i = 0; i < goldlength; i++) {
       arrG.push(1);
     }
-    for (let i = 0; i < redlength; i++) {
-      arrR.push(1);
-    }
-    setarrGrey(arrG);
-    setarrRed(arrR);
+    setarrBlack(arrB);
+    setarrGold(arrG);
 
     let item = localStorage.getItem(themovie.id);
     item = JSON.parse(item);
     if (item) {
-      item.starNumber = arrR.length;
+      item.starNumber = arrG.length;
       item = JSON.stringify(item);
       localStorage.setItem(themovie.id, item);
     } else {
-      themovie.starNumber = arrR.length;
+      themovie.starNumber = arrG.length;
       item = JSON.stringify(themovie);
       localStorage.setItem(themovie.id, item);
     }
   };
 
-  const handleClickRed = (redindex) => {
-    let redlength = redindex + 1;
-    let greylength = 5 - redlength;
+  const handleClickGold = (goldindex) => {
+    let goldlength = goldindex + 1;
+    let blacklength = 5 - goldlength;
+    let arrB = [];
     let arrG = [];
-    let arrR = [];
-    for (let i = 0; i < greylength; i++) {
+    for (let i = 0; i < blacklength; i++) {
+      arrB.push(1);
+    }
+    for (let i = 0; i < goldlength; i++) {
       arrG.push(1);
     }
-    for (let i = 0; i < redlength; i++) {
-      arrR.push(1);
-    }
-    setarrGrey(arrG);
-    setarrRed(arrR);
+    setarrBlack(arrB);
+    setarrGold(arrG);
 
     let item = localStorage.getItem(themovie.id);
     item = JSON.parse(item);
     if (item) {
-      item.starNumber = arrR.length;
+      item.starNumber = arrG.length;
       item = JSON.stringify(item);
       localStorage.setItem(themovie.id, item);
     } else {
-      themovie.starNumber = arrR.length;
+      themovie.starNumber = arrG.length;
       item = JSON.stringify(themovie);
       localStorage.setItem(themovie.id, item);
     }
   };
 
-  const handleClickNoHeart = () => {
-    setarrGrey([1, 1, 1, 1, 1]);
-    setarrRed([]);
+  const handleClickNoStar = () => {
+    setarrBlack([1, 1, 1, 1, 1]);
+    setarrGold([]);
     let item = localStorage.getItem(themovie.id);
     item = JSON.parse(item);
     if (item) {
@@ -181,12 +182,12 @@ const MovieDetail = (props) => {
     }
   };
 
-  const handleNoHeart = () => {
+  const handleNoStar = () => {
     return (
       <a
         href='#'
         onClick={() => {
-          handleClickNoHeart();
+          handleClickNoStar();
         }}
       >
         <img src={NoHeart} width='20' />
@@ -194,28 +195,28 @@ const MovieDetail = (props) => {
     );
   };
 
-  const handleRedHeart = (arrRed) => {
-    const items = arrRed.map((item, i) => (
+  const handleGoldStar = (arrGold) => {
+    const items = arrGold.map((i) => (
       <a
         href='#'
         onClick={() => {
-          handleClickRed(i);
+          handleClickGold(i);
         }}
       >
-        <img src={RedHeart} width='20' />
+        <img src={GoldStar} width='20' />
       </a>
     ));
     return items;
   };
-  const handleGreyHeart = (arrGrey) => {
-    const items = arrGrey.map((item, i) => (
+  const handleBlackStar = (arrBlack) => {
+    const items = arrBlack.map((i) => (
       <a
         href='#'
         onClick={() => {
-          handleClickGrey(i);
+          handleClickBlack(i);
         }}
       >
-        <img src={GreyHeart} width='20' />
+        <img src={BlackStar} width='20' />
       </a>
     ));
     return items;
@@ -256,9 +257,9 @@ const MovieDetail = (props) => {
               <br />
               How would you rate this movie?
             </h5>
-            {/* {handleNoHeart()} */}
-            {handleRedHeart(arrRed)}
-            {handleGreyHeart(arrGrey)}
+            {handleNoStar()}
+            {handleGoldStar(arrGold)}
+            {handleBlackStar(arrBlack)}
           </form>
 
           <Link className='goback' to='/' className=''>
