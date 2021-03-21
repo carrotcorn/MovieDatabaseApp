@@ -257,7 +257,9 @@ const MovieDetail = (props) => {
               <br />
               How would you rate this movie?
             </h5>
-            {handleNoStar()}
+            <div>
+              <p>Clear Stars: {handleNoStar()}</p>
+            </div>
             {handleGoldStar(arrGold)}
             {handleBlackStar(arrBlack)}
           </form>
