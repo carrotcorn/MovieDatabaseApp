@@ -37,6 +37,9 @@ function App() {
             <Route path='/myrated'>
               <MyRated />
             </Route>
+            <Route>
+              <PageNotFound />
+            </Route>
           </Switch>
           <Footer />
         </div>
