@@ -6,12 +6,14 @@
       "blackindex",
       "blackinit",
       "blacklength",
+      "genrelist",
       "goldinit",
       "goldlength",
       "grey",
       "greyheart",
       "greyindex",
       "greylength",
+      "handlesortlist",
       "initlength",
       "likeshow",
       "likevalue",
@@ -25,6 +27,8 @@
       "searchmovie",
       "searchmovieinit",
       "setarr",
+      "sortitems",
+      "sortlist",
       "themovie"
    ]
 }
