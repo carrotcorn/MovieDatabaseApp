@@ -19,6 +19,7 @@ const MyFavourites = () => {
   console.log(movieData2);
   return (
     <div>
+      <br />
       <Search lang='en_us' setMovieData={setMovieData} />
       <hr />
 

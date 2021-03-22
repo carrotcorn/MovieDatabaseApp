@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 let genreArr = [];
 
@@ -12,6 +12,7 @@ const Genre = (props) => {
     let genrelist = await res.json();
     genrelist = genrelist.genres;
     let ga = filterGN(genrelist);
+    // console.log(ga);
   };
   fetchgenrelist();
 

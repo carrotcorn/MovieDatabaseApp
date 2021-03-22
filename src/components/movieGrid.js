@@ -41,7 +41,9 @@ const makeGrid = (array) => {
             className='gallery-item'
           >
             <div className='moreInfo'>
-              <button>More Info</button>
+              <button type='button' class='btn btn-primary'>
+                More Info
+              </button>
             </div>
           </Link>
         </div>

@@ -12,12 +12,18 @@ const SelectType = (props) => {
     props.handleChangType(selection);
   };
   return (
-    <span>
-      <label>Options:</label>
-      <select name='theSelection' id='selection' onChange={handleChange}>
+    <div>
+      <label style={{ marginLeft: "17px", marginRight: "5px" }}>Options:</label>
+      <select
+        name='theSelection'
+        class='form-select form-select-sm'
+        id='selection'
+        aria-label='.form-select-sm'
+        onChange={handleChange}
+      >
         {makeTypeOptions(selections)}
       </select>
-    </span>
+    </div>
   );
 };
 export default SelectType;

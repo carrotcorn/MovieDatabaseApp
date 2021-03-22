@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MovieGrid from "./movieGrid";
 import Search from "./search";
 
@@ -19,6 +19,7 @@ const MyRated = () => {
 
   return (
     <div>
+      <br />
       <Search lang='en_us' setMovieData={setMovieData} />
       <hr />
       {movieData.length === 0 && (

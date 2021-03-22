@@ -1,9 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../images/mylogo.png";
+import logo from "../images/filmLogo.svg";
 
 const Nav = () => (
-  <nav className='navbar navbar-expand-lg navbar-dark bg-secondary pt-0 pb-0'>
+  <nav
+    className='navbar navbar-expand-lg navbar-light pt-0 pb-0'
+    style={{ backgroundColor: "#01A9DB" }}
+  >
     <a className='navbar-brand' href='/'>
       <img
         alt='logo'
@@ -11,7 +14,6 @@ const Nav = () => (
         width='50'
         height='50'
         className='d-inline-block align-top mt-0 mb-0'
-        alt=''
       />
     </a>
     <a className='navbar-brand' href='/'>

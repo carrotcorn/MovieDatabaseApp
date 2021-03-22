@@ -30,7 +30,7 @@ export default function Home(props) {
       <div className='inline'>
         &nbsp;&nbsp;&nbsp;
         <Search setMovieData={setMovieData} />
-        <div className='optionGroup'>
+        <div className='optionGroup' style={{ marginTop: "10px" }}>
           <SelectType choise={choice} handleChangType={handleChangeType} />
         </div>
       </div>

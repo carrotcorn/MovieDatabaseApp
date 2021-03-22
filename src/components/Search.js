@@ -8,7 +8,7 @@ const Search = (props) => {
 
   useEffect(() => {
     const fetchSearch = async () => {
-      if (searchInput != "") {
+      if (searchInput !== "") {
         const res = await fetch(
           `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=${props.lang}&query=${searchInput}&page=1`
         );
@@ -29,10 +29,31 @@ const Search = (props) => {
     handleSearch(searching);
   };
   return (
-    <form onSubmit={handleSearchBox}>
-      <input name='searching' placeholder='movie name'></input>
-      <button className='search'>Search</button>
-    </form>
+    <div>
+      <nav>
+        <div class='container-fluid'>
+          <form class='d-flex' onSubmit={handleSearchBox}>
+            <input
+              type='text'
+              className='form-control mr-sm-2'
+              class='form-control'
+              aria-label='search'
+              aria-describedby='inputGroup-sizing-sm'
+              name='searching'
+              placeholder='movie name'
+              style={{
+                maxWidth: "25%",
+                minWidth: "200px",
+                marginRight: "20px",
+              }}
+            ></input>
+            <button className='btn btn-success' type='submit' value='submit'>
+              Search
+            </button>
+          </form>
+        </div>
+      </nav>
+    </div>
   );
 };
 export default Search;
