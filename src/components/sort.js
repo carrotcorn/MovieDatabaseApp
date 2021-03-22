@@ -10,6 +10,7 @@ const Sort = (props) => {
       "original_title.asc",
       "original_title.desc",
     ];
+
     const sortitems = sortlist.map((item, i) => (
       <option
         key={i}
@@ -28,6 +29,6 @@ const Sort = (props) => {
     props.handleChangSort(sort);
   };
 
-  return <select onChange={handleChange}>{handlesortlist()}</select>;
+  return <select onChange={handleChange} style={{marginLeft:"10px"}}>{handlesortlist()}</select>;
 };
 export default Sort;

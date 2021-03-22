@@ -66,7 +66,13 @@ const Genre = (props) => {
   const handleGenreList = (arr) => {
     return arr.map((item, i) => (
       <span>
-        <input onClick={handleChange} key={i} type='checkbox' value={item.id} />
+        <input
+          onClick={handleChange}
+          key={i}
+          type='checkbox'
+          value={item.id}
+          style={{ marginLeft: "5px" }}
+        />
         {item.name}
       </span>
     ));

@@ -98,11 +98,17 @@ const MovieDetail = (props) => {
           src={`${imagePath}${poster}`}
           className='card-img-top'
           alt={`${themovie.title}`}
+          style={{ maxInlineSize: "500px" }}
         />
       );
     } else {
       return (
-        <img src={NoPic} className='card-img-top' alt={`${themovie.title}`} />
+        <img
+          src={NoPic}
+          className='card-img-top'
+          alt={`${themovie.title}`}
+          style={{ maxHeight: "500px" }}
+        />
       );
     }
   };
@@ -226,6 +232,7 @@ const MovieDetail = (props) => {
 
   return (
     <main>
+      <br />
       <Search lang='en_us' setMovieData={setMovieData} />
       <hr />
       {
