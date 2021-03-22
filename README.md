@@ -2,4 +2,4 @@
 
 This project was created using the react framework and Bootstrap components and css
 
-![Alt Text]()
+![MovieDatabaseDemo](https://github.com/carrotcorn/MovieDatabaseApp/blob/main/src/images/movie-db.gif)
